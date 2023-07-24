@@ -3,15 +3,14 @@
    ========================================================================== */
 
 @font-face {
-    font-family: muli-regular;
-    src: url(../fonts/Muli-Regular.ttf)
+  font-family: muli-regular;
+  src: url(../fonts/Muli-Regular.ttf);
 }
 
 @font-face {
-    font-family: muli-semibold;
-    src: url(../fonts/Muli-SemiBold.ttf)
+  font-family: muli-semibold;
+  src: url(../fonts/Muli-SemiBold.ttf);
 }
-
 
 .font-robo {
   font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
@@ -54,10 +53,7 @@
 /* ==========================================================================
    #BOX-SIZING
    ========================================================================== */
-/**
- * More sensible default box-sizing:
- * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- */
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -69,7 +65,9 @@ html {
   margin: 0;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
@@ -78,40 +76,40 @@ html {
 /* ==========================================================================
    #RESET
    ========================================================================== */
-/**
- * A very simple reset that sits on top of Normalize.css.
- */
+
 body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+dd,
+ol,
+ul,
 figure,
 hr,
-fieldset, legend {
+fieldset,
+legend {
   margin: 0;
   padding: 0;
 }
 
-/**
- * Remove trailing margins from nested lists.
- */
+
 li > ol,
 li > ul {
   margin-bottom: 0;
 }
 
-/**
- * Remove default table spacing.
- */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/**
- * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
- *    on fieldsets.
- */
 fieldset {
   min-width: 0;
   /* [1] */
@@ -124,9 +122,6 @@ button {
   border: none;
 }
 
-/* ==========================================================================
-   #PAGE WRAPPER
-   ========================================================================== */
 .page-wrapper {
   min-height: 100vh;
   padding: 35px 150px;
@@ -139,7 +134,12 @@ body {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
 }
 
@@ -173,7 +173,6 @@ h6 {
 .bg-blue {
   background: #2c6ed5;
 }
-
 
 /* ==========================================================================
    #SPACING
@@ -222,18 +221,17 @@ h6 {
   padding: 0 25px;
   cursor: pointer;
   color: #666;
-  font-family: 'muli-semibold';
+  font-family: "muli-semibold";
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
   font-size: 14px;
   font-weight: 700;
-  border:none;
+  border: none;
 }
 
 .btn--radius {
-
 }
 
 .btn--green {
@@ -243,7 +241,6 @@ h6 {
 .btn--green:hover {
   background: #cfc7b8;
 }
-
 
 /* ==========================================================================
    #FORM
@@ -257,7 +254,7 @@ input {
   box-shadow: none;
   width: 100%;
   font-size: 14px;
-  font-family: 'muli-semibold';
+  font-family: "muli-semibold";
 }
 
 /* input group 1 */
@@ -267,7 +264,7 @@ input {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.form-group{
+.form-group {
   margin: 25px 0px;
   border: 1px solid;
   padding: 11px 15px;
@@ -289,7 +286,7 @@ input {
 
 .input--style-2 {
   padding: 15px 5px;
-  padding-bottom:3px;
+  padding-bottom: 3px;
   color: #666;
   font-size: 16px;
   font-weight: 500;
@@ -322,12 +319,11 @@ input {
   color: #808080;
 }
 
-
 /* ==========================================================================
    #TITLE
    ========================================================================== */
-.qr-heading{
-    text-align: center;
+.qr-heading {
+  text-align: center;
 }
 .title {
   margin-bottom: 18px;
@@ -365,7 +361,7 @@ input {
   margin: auto;
 }
 
-.card-heading img{
+.card-heading img {
   width: 75%;
 }
 
@@ -383,87 +379,94 @@ input {
   .card-2 .card-heading {
     width: 100%;
     display: block;
-    padding-top: 300px;
     background-position: left center;
   }
   .card-2 .card-body {
     display: block;
-    padding: 60px 50px;
+    padding: 50px 25px;
+  }
+  .page-wrapper {
+    padding: 10px;
+  }
+  .bot-buts {
+    text-align: center;
   }
 }
-
 
 .container {
   position: relative;
   text-align: center;
 
-  font-family:'muli-semibold';
+  font-family: "muli-semibold";
 }
 
-
-.overlay{
-      position: absolute;
-      top: 50%;
-      width: 68%;
-      height: 86%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+.overlay {
+  position: absolute;
+  top: 50%;
+  width: 68%;
+  height: 86%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .black-bg {
-
-      opacity: 0.5;
-      filter: blur(40px);
-      background: black;
-      position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  opacity: 0.5;
+  filter: blur(40px);
+  background: black;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.text-qr{
-    color: white;
-    font-weight: bold;
-    top: 50%;
-    position: absolute;
-      width: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+.text-qr {
+  color: white;
+  font-weight: bold;
+  top: 50%;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.qr-title{
-    font-size: 27px;
-    margin: 10px;
-    color: white;
+.qr-title {
+  font-size: 27px;
+  margin: 10px;
+  color: white;
 }
 
-.hide{
-    display:none;
+.hide {
+  display: none;
 }
 
-
-.form_field::placeholder{
-    color:transparent;
+.form_field::placeholder {
+  color: transparent;
 }
 
-.form_label{
-    position:absolute;
-    display:block;
-    top:3px;
-    left:0;
-    font-size:0.6rem;
-    font-family: 'muli-semibold';
-    color: #666;
-    transition: 0.2s;
+.form_label {
+  position: absolute;
+  display: block;
+  top: 3px;
+  left: 0;
+  font-size: 0.6rem;
+  font-family: "muli-semibold";
+  color: #666;
+  transition: 0.2s;
 }
 
-.form_field:placeholder-shown ~ .form_label{
-       top: 15px;
-       left: 5px;
-       font-family: 'muli-semibold';
-       color: #666;
-       font-size: 16px;
-       font-weight: 500;
-       cursor: text;
+.form_field:placeholder-shown ~ .form_label {
+  top: 15px;
+  left: 5px;
+  font-family: "muli-semibold";
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: text;
+}
+
+.message{
+  text-align: center;
+  font-family: "muli-semibold";
+  padding-bottom: 10px;
 }

@@ -1,7 +1,5 @@
 package com.qr.generator.entities;
 
-
-
 public class User {
 
 	private int id;
@@ -17,14 +15,14 @@ public class User {
 
 	private String street;
 	private String city;
-	private Integer zip;
+	private String zip;
 	private String state;
 	private String country;
 
 	private String linkedinURL;
 
 	public User(int id, String first_name, String last_name, String email, String phone, String company, String job,
-			String street, String city, Integer zip, String state, String country, String linkedinURL) {
+			String street, String city, String zip, String state, String country, String linkedinURL) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
@@ -125,11 +123,11 @@ public class User {
 		this.city = city;
 	}
 
-	public Integer getZip() {
+	public String getZip() {
 		return zip;
 	}
 
-	public void setZip(Integer zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 
@@ -156,8 +154,5 @@ public class User {
 	public void setLinkedinURL(String linkedinURL) {
 		this.linkedinURL = linkedinURL;
 	}
-	
-	
-	
 
 }

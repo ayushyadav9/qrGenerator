@@ -22,6 +22,11 @@
             <div class="card card-2">
 
                 <div class="card-body">
+                	<div th:if="${session.message}" class="message" role="alert">
+		                <span th:text="${session.message.content}"></span>
+		                <th:block th:text="${@sessionHelper.removeMessage()}"> </th:block>
+		             </div>
+                    
                     <div class="qr-heading">
                         <h2 class="title">vCard QR Code</h2>
                     </div>
@@ -122,7 +127,7 @@
                             </div>
                         </div>
 
-                        <div class="p-t-30">
+                        <div class="bot-buts p-t-30">
                             <button class="btn btn--radius btn--green" id="generate-qr" type="submit" >Generate</button>
                             <button class="btn btn--radius btn--green" id="reset-qr" th:href="@{/}" type="reset" >Reset</button>
                         </div>
@@ -145,7 +150,7 @@
                             <a th:href="@{${qrURL}}" download>
                                 <button class="btn  btn--green">Download</button>
                             </a>
-                            <button class="btn  btn--green" id="share-qr">Share</button>
+                            <!-- <button class="btn  btn--green" id="share-qr">Share</button> -->
                         </div>
                     </div>
                 </div>

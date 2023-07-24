@@ -1,6 +1,5 @@
 package com.qr.generator.controller;
 
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,22 +15,23 @@ import java.io.*;
 import java.util.Base64;
 
 @Controller
-public class HomeController{
+public class HomeController {
 
     @RequestMapping("/")
     public String home(Model model) {
-        model.addAttribute("user",new User());
+        model.addAttribute("user", new User());
         return "home";
     }
 
     @PostMapping("/")
     public String registerUser(@ModelAttribute("user") User user, Model model, HttpSession session) {
         try {
-            model.addAttribute("user",user);
+            model.addAttribute("user", user);
 
             VCard vCard = new VCard();
             vCard.setName(user.getFirst_name() + " " + user.getLast_name());
-            vCard.setAddress(user.getStreet()+ ", " + user.getCity() +", " + user.getState() +", " + user.getCountry() +", " + user.getZip() );
+            vCard.setAddress(user.getStreet() + ", " + user.getCity() + ", " + user.getState() + ", "
+                    + user.getCountry() + ", " + user.getZip());
             vCard.setCompany(user.getCountry());
             vCard.setPhoneNumber(user.getPhone());
             vCard.setTitle(user.getJob());
@@ -39,30 +39,26 @@ public class HomeController{
             vCard.setWebsite(user.getLinkedinURL());
             System.out.println(vCard);
 
-
-            ByteArrayOutputStream bout =
-                    QRCode.from(vCard)
-                            .withSize(250, 250)
-                            .to(ImageType.PNG)
-                            .stream();
-            
+            ByteArrayOutputStream bout = QRCode.from(vCard)
+                    .withSize(250, 250)
+                    .to(ImageType.PNG)
+                    .stream();
 
             byte[] pngData = Base64.getEncoder().encode(bout.toByteArray());
-           
+
             String result = new String(pngData);
             model.addAttribute("qrURL", "data:image/png;base64," + result);
 
             try {
-                String filename = user.getFirst_name()+ "_" + user.getPhone() + "_vcard.png";
+                String filename = user.getFirst_name() + "_" + user.getPhone() + "_vcard.png";
                 OutputStream out = new FileOutputStream("./src/main/resources/static/images/" + filename);
                 bout.writeTo(out);
                 out.flush();
                 out.close();
-                session.setAttribute("message", new Message("QR code generated succesfuly","success"));
-//                model.addAttribute("qrURL", filename);
+                session.setAttribute("message", new Message("Your QR code generated succesfuly", "success"));
+                // model.addAttribute("qrURL", filename);
 
-
-            } catch (FileNotFoundException e){
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -72,8 +68,8 @@ public class HomeController{
 
         } catch (Exception e) {
             e.printStackTrace();
-            model.addAttribute("user",user);
-            session.setAttribute("message", new Message("Something went wrong "+ e.getMessage(),"danger"));
+            model.addAttribute("user", user);
+            session.setAttribute("message", new Message("Something went wrong " + e.getMessage(), "danger"));
             return "home";
         }
     }

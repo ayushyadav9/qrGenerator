@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>QR Code Generator | Create Your Free QR Codes </title>
+
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="wrapper">
+            <div class="card card-2">
+
+                <div class="card-body">
+                    <div class="qr-heading">
+                        <h2 class="title">vCard QR Code</h2>
+                    </div>
+                    <form th:action="@{/}" method="post" th:object="${user}">
+                        <div class="form-group">
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="name" name="first_name" th:value="${user.first_name}" type="text" placeholder="First Name" >
+                                        <label for="name" class="form_label">Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="lname" name="last_name" th:value="${user.last_name}" type="text" placeholder="Last Name" >
+                                        <label for="lname" class="form_label">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="phone" name="phone" th:value="${user.phone}" type="text" placeholder="Phone" >
+                                        <label for="phone" class="form_label">Phone</label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="email" name="email" th:value="${user.email}" type="email" placeholder="Email" >
+                                        <label for="email" class="form_label">Email</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="company" name="company" th:value="${user.company}" type="text" placeholder="Company" >
+                                        <label for="company" class="form_label">Company</label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="job" name="job" th:value="${user.job}" type="text" placeholder="Your Job" >
+                                        <label for="job" class="form_label">Job</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="input--style-2 form_field" id="street" name="street" th:value="${user.street}" type="text"  placeholder="Street" >
+                                <label for="street" class="form_label">Street</label>
+                            </div>
+
+
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="city" name="city" th:value="${user.city}" type="text" placeholder="City" >
+                                        <label for="city" class="form_label">City</label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="zip" name="zip" th:value="${user.zip}" type="text" placeholder="ZIP" >
+                                        <label for="zip" class="form_label">ZIP</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="state" name="state" th:value="${user.state}" type="text" placeholder="State">
+                                        <label for="state" class="form_label">State</label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <input class="input--style-2 form_field" id="country" name="country" th:value="${user.country}" type="text" placeholder="Country">
+                                        <label for="country" class="form_label">Country</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="input--style-2 form_field" id="linkedin" name="linkedinURL" th:value="${user.linkedinURL}" type="text" placeholder="LinkedIn Profile">
+                                <label for="linkedin" class="form_label">LinkedIn Profile</label>
+                            </div>
+                        </div>
+
+                        <div class="p-t-30">
+                            <button class="btn btn--radius btn--green" id="generate-qr" type="submit" >Generate</button>
+                            <button class="btn btn--radius btn--green" id="reset-qr" th:href="@{/}" type="reset" >Reset</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="card-heading">
+                    <div class="container">
+                        <img src=""  id="qr-image" th:src="${qrURL} ? @{'/images/'+${qrURL}} : 'images/default_qr.jpeg'" alt=""></img>
+                        <div class="overlay" th:classappend="${qrURL} ? 'hide' : ''">
+                            <div class="black-bg"></div>
+                            <div class="text-qr">
+                                <div class="qr-title">Scan Me</div>
+                                <p>Enter details to generate QR vCard.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qr-text">
+                        <div th:if="${qrURL}" class="">
+                            <a th:href="@{'images/'+${qrURL}}" download>
+                                <button class="btn  btn--green">Download</button>
+                            </a>
+                            <button class="btn  btn--green" id="share-qr">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="js/jquery/jquery.min.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+</body>
+
+</html>

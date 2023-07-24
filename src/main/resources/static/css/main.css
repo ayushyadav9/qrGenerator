@@ -1,0 +1,469 @@
+/* ==========================================================================
+   #FONT
+   ========================================================================== */
+
+@font-face {
+    font-family: muli-regular;
+    src: url(../fonts/Muli-Regular.ttf)
+}
+
+@font-face {
+    font-family: muli-semibold;
+    src: url(../fonts/Muli-SemiBold.ttf)
+}
+
+
+.font-robo {
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+}
+
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.row-space {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.col-2 {
+  width: -webkit-calc((100% - 60px) / 2);
+  width: -moz-calc((100% - 60px) / 2);
+  width: calc((100% - 60px) / 2);
+}
+
+@media (max-width: 767px) {
+  .col-2 {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   #BOX-SIZING
+   ========================================================================== */
+/**
+ * More sensible default box-sizing:
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* ==========================================================================
+   #RESET
+   ========================================================================== */
+/**
+ * A very simple reset that sits on top of Normalize.css.
+ */
+body,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, pre,
+dl, dd, ol, ul,
+figure,
+hr,
+fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Remove trailing margins from nested lists.
+ */
+li > ol,
+li > ul {
+  margin-bottom: 0;
+}
+
+/**
+ * Remove default table spacing.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+ *    on fieldsets.
+ */
+fieldset {
+  min-width: 0;
+  /* [1] */
+  border: 0;
+}
+
+button {
+  outline: none;
+  background: none;
+  border: none;
+}
+
+/* ==========================================================================
+   #PAGE WRAPPER
+   ========================================================================== */
+.page-wrapper {
+  min-height: 100vh;
+  padding: 35px 150px;
+  background: #f9f6f1;
+}
+
+body {
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+h6 {
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   #BACKGROUND
+   ========================================================================== */
+.bg-blue {
+  background: #2c6ed5;
+}
+
+
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+.p-t-100 {
+  padding-top: 100px;
+}
+
+.p-t-180 {
+  padding-top: 100px;
+}
+
+.p-t-20 {
+  padding-top: 20px;
+}
+
+.p-t-30 {
+  padding-top: 30px;
+}
+
+.p-b-100 {
+  padding-bottom: 100px;
+}
+
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+.wrapper {
+  margin: 0 auto;
+}
+
+.wrapper--w960 {
+  max-width: 960px;
+}
+
+.wrapper--w680 {
+  max-width: 680px;
+}
+
+/* ==========================================================================
+   #BUTTON
+   ========================================================================== */
+.btn {
+  line-height: 40px;
+  display: inline-block;
+  padding: 0 25px;
+  cursor: pointer;
+  color: #666;
+  font-family: 'muli-semibold';
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  font-size: 14px;
+  font-weight: 700;
+  border:none;
+}
+
+.btn--radius {
+
+}
+
+.btn--green {
+  background: #e9e0cf;
+}
+
+.btn--green:hover {
+  background: #cfc7b8;
+}
+
+
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+input {
+  outline: none;
+  margin: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 100%;
+  font-size: 14px;
+  font-family: 'muli-semibold';
+}
+
+/* input group 1 */
+/* end input group 1 */
+.input-group {
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.form-group{
+  margin: 25px 0px;
+  border: 1px solid;
+  padding: 11px 15px;
+}
+
+.input-icon {
+  position: absolute;
+  font-size: 18px;
+  color: #ccc;
+  right: 8px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.input--style-2 {
+  padding: 15px 5px;
+  padding-bottom:3px;
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.input--style-2::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #808080;
+}
+
+.input--style-2:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #808080;
+  opacity: 1;
+}
+
+.input--style-2::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #808080;
+  opacity: 1;
+}
+
+.input--style-2:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #808080;
+}
+
+.input--style-2:-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #808080;
+}
+
+
+/* ==========================================================================
+   #TITLE
+   ========================================================================== */
+.qr-heading{
+    text-align: center;
+}
+.title {
+  margin-bottom: 18px;
+  border: 1px solid #dad8e4;
+  font-family: muli-semibold;
+  display: inline-block;
+  font-size: 22px;
+  color: #453e79;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  padding: 5px 15px;
+}
+
+/* ==========================================================================
+   #CARD
+   ========================================================================== */
+.card {
+  overflow: hidden;
+
+  background: #fff;
+}
+
+.card-2 {
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+
+  width: 100%;
+  display: flex;
+}
+
+.card-2 .card-heading {
+  text-align: center;
+  flex: 30%;
+  margin: auto;
+}
+
+.card-heading img{
+  width: 75%;
+}
+
+.card-2 .card-body {
+  flex: 70%;
+  padding: 45px 75px;
+  padding-bottom: 52px;
+  padding-right: 0px;
+}
+
+@media (max-width: 767px) {
+  .card-2 {
+    display: block;
+  }
+  .card-2 .card-heading {
+    width: 100%;
+    display: block;
+    padding-top: 300px;
+    background-position: left center;
+  }
+  .card-2 .card-body {
+    display: block;
+    padding: 60px 50px;
+  }
+}
+
+
+.container {
+  position: relative;
+  text-align: center;
+
+  font-family:'muli-semibold';
+}
+
+
+.overlay{
+      position: absolute;
+      top: 50%;
+      width: 68%;
+      height: 86%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+.black-bg {
+
+      opacity: 0.5;
+      filter: blur(40px);
+      background: black;
+      position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-qr{
+    color: white;
+    font-weight: bold;
+    top: 50%;
+    position: absolute;
+      width: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+
+.qr-title{
+    font-size: 27px;
+    margin: 10px;
+    color: white;
+}
+
+.hide{
+    display:none;
+}
+
+
+.form_field::placeholder{
+    color:transparent;
+}
+
+.form_label{
+    position:absolute;
+    display:block;
+    top:3px;
+    left:0;
+    font-size:0.6rem;
+    font-family: 'muli-semibold';
+    color: #666;
+    transition: 0.2s;
+}
+
+.form_field:placeholder-shown ~ .form_label{
+       top: 15px;
+       left: 5px;
+       font-family: 'muli-semibold';
+       color: #666;
+       font-size: 16px;
+       font-weight: 500;
+       cursor: text;
+}

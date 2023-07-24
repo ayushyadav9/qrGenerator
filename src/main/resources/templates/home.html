@@ -131,7 +131,7 @@
                 </div>
                 <div class="card-heading">
                     <div class="container">
-                        <img src=""  id="qr-image" th:src="${qrURL} ? @{'/images/'+${qrURL}} : 'images/default_qr.jpeg'" alt=""></img>
+                        <img src=""  id="qr-image" th:src="${qrURL} ? @{${qrURL}} : 'images/default_qr.jpeg'" alt=""></img>
                         <div class="overlay" th:classappend="${qrURL} ? 'hide' : ''">
                             <div class="black-bg"></div>
                             <div class="text-qr">
@@ -142,7 +142,7 @@
                     </div>
                     <div class="qr-text">
                         <div th:if="${qrURL}" class="">
-                            <a th:href="@{'images/'+${qrURL}}" download>
+                            <a th:href="@{${qrURL}}" download>
                                 <button class="btn  btn--green">Download</button>
                             </a>
                             <button class="btn  btn--green" id="share-qr">Share</button>

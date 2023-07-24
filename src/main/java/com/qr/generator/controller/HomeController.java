@@ -13,6 +13,7 @@ import net.glxn.qrgen.core.image.ImageType;
 import net.glxn.qrgen.core.vcard.VCard;
 import net.glxn.qrgen.javase.QRCode;
 import java.io.*;
+import java.util.Base64;
 
 @Controller
 public class HomeController{
@@ -44,7 +45,13 @@ public class HomeController{
                             .withSize(250, 250)
                             .to(ImageType.PNG)
                             .stream();
-//            byte[] pngData = bout.toByteArray();
+            
+
+            byte[] pngData = Base64.getEncoder().encode(bout.toByteArray());
+           
+            String result = new String(pngData);
+            model.addAttribute("qrURL", "data:image/png;base64," + result);
+
             try {
                 String filename = user.getFirst_name()+ "_" + user.getPhone() + "_vcard.png";
                 OutputStream out = new FileOutputStream("./src/main/resources/static/images/" + filename);
@@ -52,7 +59,7 @@ public class HomeController{
                 out.flush();
                 out.close();
                 session.setAttribute("message", new Message("QR code generated succesfuly","success"));
-                model.addAttribute("qrURL", filename);
+//                model.addAttribute("qrURL", filename);
 
 
             } catch (FileNotFoundException e){
